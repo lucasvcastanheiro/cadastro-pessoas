@@ -34,5 +34,14 @@
 
   <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
   <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+
 </table>
 
+<mat-paginator #paginator
+class="demo-paginator"
+(page)="handlePageEvent($event)"
+[length]="totalRegistros"
+[pageSize]="registros"
+[pageSizeOptions]="[2, 5, 10]"
+aria-label="Select page">
+</mat-paginator>

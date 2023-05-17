@@ -10,4 +10,5 @@ export interface Pessoa {
 
 export interface PagePessoa {
   content: Pessoa[];
+  totalElements: number;
 }

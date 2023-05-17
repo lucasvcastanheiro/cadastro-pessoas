@@ -12,10 +12,11 @@ export class CadastroPessoasService {
 
   private readonly API_BASE_URL = 'http://localhost:8080/pessoa';
 
-  buscar() {
-    return this.httpClient
-      .get<PagePessoa>(this.API_BASE_URL + '/paginar?registros=100&pagina=0')
-      .pipe(map((pagePessoa) => pagePessoa.content));
+  buscar(registros: number, pagina: number) {
+    return this.httpClient.get<PagePessoa>(
+      this.API_BASE_URL + `/paginar?registros=${registros}&pagina=${pagina}`
+    );
+    // .pipe(map((pagePessoa) => pagePessoa.content));
   }
 
   criar(pessoa: Pessoa) {
